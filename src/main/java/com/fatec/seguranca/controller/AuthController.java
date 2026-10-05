@@ -7,8 +7,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.fatec.seguranca.model.Usuario;
 import com.fatec.seguranca.service.UsuarioService;
-import com.fatec.seguranca.service.model.Usuario;
+
 import org.springframework.http.HttpStatus;
 
 import java.util.HashMap;
@@ -51,4 +53,4 @@ public class AuthController {
             return ResponseEntity.badRequest().body(erro);
         }
     }
-}
+}

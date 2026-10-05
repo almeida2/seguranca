@@ -1,6 +1,5 @@
-package com.fatec.seguranca.repository;
+package com.fatec.seguranca.model;
 
-import com.fatec.seguranca.service.model.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

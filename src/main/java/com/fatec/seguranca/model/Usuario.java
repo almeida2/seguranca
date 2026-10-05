@@ -1,4 +1,4 @@
-package com.fatec.seguranca.service.model;
+package com.fatec.seguranca.model;
 
 import jakarta.persistence.*;
 import org.springframework.security.core.GrantedAuthority;

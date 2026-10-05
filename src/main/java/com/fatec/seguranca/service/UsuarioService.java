@@ -1,7 +1,8 @@
 package com.fatec.seguranca.service;
 
-import com.fatec.seguranca.repository.UsuarioRepository;
-import com.fatec.seguranca.service.model.Usuario;
+import com.fatec.seguranca.model.Usuario;
+import com.fatec.seguranca.model.UsuarioRepository;
+
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -33,8 +34,7 @@ public class UsuarioService {
         Usuario novoUsuario = new Usuario(
                 usuario.getUsername(),
                 senhaCriptografada,
-                role
-        );
+                role);
 
         return usuarioRepository.save(novoUsuario);
     }
