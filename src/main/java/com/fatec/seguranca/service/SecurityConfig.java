@@ -21,15 +21,15 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .csrf(csrf -> csrf.disable()) // Desabilita CSRF para APIs REST
-                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)) // APIs
-                                                                                                              // REST
-                                                                                                              // devem
-                                                                                                              // ser
-                                                                                                              // stateless
+                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/api/public/**").permitAll() // Endpoints públicos
+                        .requestMatchers("/h2-console/**").permitAll() // Console do H2
                         .anyRequest().authenticated() // Exige autenticação no restante
                 )
+                // O H2 utiliza frames HTML na interface web
+                .headers(headers -> headers
+                        .frameOptions(frameOptions -> frameOptions.sameOrigin()))
                 .httpBasic(Customizer.withDefaults()); // Ativa HTTP Basic Auth
 
         return http.build();
