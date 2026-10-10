@@ -10,8 +10,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 /**
- * Implementa os métodos responsáveis por carregar os dados do usuário no Spring
- * Security
+ * Carregar as informacoes de usuário para o Spring Security
  */
 @Service
 public class CustomUserDetailsService implements UserDetailsService {

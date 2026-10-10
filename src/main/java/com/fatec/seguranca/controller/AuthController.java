@@ -43,9 +43,9 @@ public class AuthController {
     }
 
     @PostMapping("/public/register")
-    public ResponseEntity<Object> registrarUsuario(@RequestBody Usuario usuario) {
+    public ResponseEntity<Object> registrarUsuario(@RequestBody com.fatec.seguranca.model.UsuarioDTO usuarioDTO) {
         try {
-            Usuario novoUsuario = usuarioService.cadastrarUsuario(usuario);
+            Usuario novoUsuario = usuarioService.cadastrarUsuario(usuarioDTO);
             return ResponseEntity.status(HttpStatus.CREATED).body(novoUsuario);
         } catch (RuntimeException e) {
             Map<String, String> erro = new HashMap<>();
