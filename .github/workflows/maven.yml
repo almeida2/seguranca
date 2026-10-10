@@ -43,8 +43,8 @@ jobs:
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
         run: |
           mvn clean verify sonar:sonar \
-            -Dsonar.projectKey=almeida2_seguranca \
-            -Dsonar.projectName="seguranca" \
+            -Dsonar.projectKey=almeida2_seguranca:com.fatec:seguranca \
+            -Dsonar.organization="esai" \
             -Dsonar.host.url=$SONAR_HOST_URL \
             -Dsonar.token=$SONAR_TOKEN \
             -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml
